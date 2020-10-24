@@ -19,11 +19,9 @@ driver.get("https://instagram.com")
 time.sleep(3)
 
 username = driver.find_element_by_name("username")
-#username.send_keys(user_name)
-username.send_keys("junayeed_")
+username.send_keys(user_name)
 password = driver.find_element_by_name("password")
-#password.send_keys(user_pass)
-password.send_keys("ComputerScience")
+password.send_keys(user_pass)
 username.send_keys(Keys.RETURN)
 time.sleep(3)
 
@@ -31,11 +29,16 @@ noSave = driver.find_element_by_class_name("cmbtv")
 noSave.click()
 #time.sleep(10)
 
-WebDriverWait(driver, 5).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[4]/div/div/div/div[3]/button[2]"))).click()
+WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[4]/div/div/div/div[3]/button[2]"))).click()
 
-driver.implicitly_wait(10)
-for i in range(1000):
-    driver.execute_script("window.scrollBy(0, 1)")
-time.sleep(10)
-
+driver.implicitly_wait(3)
+for i in range(500):
+        driver.execute_script("window.scrollBy(0, 1)")
+j = 0
+while (j < 2):
+    #time.sleep(3)
+    for i in range(2180):
+        driver.execute_script("window.scrollBy(0, 1)")
+    j = j + 1
+time.sleep(3)
 driver.quit()
